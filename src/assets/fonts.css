@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "FiraCode";
+  src: url("/fonts/FiraCode-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FuturaCondensed";
+  src: url("/fonts/FuturaCondensedBQ-Medium.otf") format("opentype");
+}
