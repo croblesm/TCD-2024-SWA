@@ -12,7 +12,10 @@ export const Hero = () => {
         />
       </div>
       <div className="flex flex-col gap-6 justify-center text-center">
-        <div className="text-2xl lg:text-6xl block capitalize text-tech-blue-800 font-bold">
+        <div
+          className="text-2xl lg:text-6xl block capitalize text-tech-blue-800 font-bold 
+        font-futura"
+        >
           <p>all the things about tech:</p>
           <p>by the community, for the community</p>
         </div>

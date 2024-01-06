@@ -1,6 +1,6 @@
 import "./assets/fonts.css";
 import { MainLayout } from "./components/layout";
-import { Hero } from "./components";
+import { About, Hero, Topics } from "./components";
 import { ContextContainer } from "./components/context";
 
 function App() {
@@ -9,6 +9,8 @@ function App() {
       <ContextContainer>
         <MainLayout>
           <Hero />
+          <About />
+          <Topics />
         </MainLayout>
       </ContextContainer>
     </>

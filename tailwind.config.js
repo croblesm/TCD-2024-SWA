@@ -28,6 +28,10 @@ export default {
           200: "#FCFCFC",
         },
       },
+      fontFamily: {
+        futura: ["FuturaCondensed", "sans-serif"],
+        fira: ["FiraCode", "monospace"],
+      },
     },
   },
   plugins: [],
