@@ -1,17 +1,15 @@
 import "./assets/fonts.css";
-import { MainLayout } from "./components/layout";
-import { About, Hero, Topics } from "./components";
 import { ContextContainer } from "./components/context";
+import { Route } from "wouter";
+import { HomeScreen } from "./screens";
 
 function App() {
   return (
     <>
       <ContextContainer>
-        <MainLayout>
-          <Hero />
-          <About />
-          <Topics />
-        </MainLayout>
+        <Route path="/">
+          <HomeScreen />
+        </Route>
       </ContextContainer>
     </>
   );
