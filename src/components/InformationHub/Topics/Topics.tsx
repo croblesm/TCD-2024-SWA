@@ -13,7 +13,7 @@ const topics = [
   },
   {
     id: 2,
-    text: "Big Data",
+    text: "Data & AI",
     Icon: <Storage sx={{ fontSize: 80 }} color="primary" />,
   },
   {

@@ -1,28 +1,21 @@
-import {
-  SiNike,
-  Si3M,
-  SiAbstract,
-  SiAdobe,
-  SiAirtable,
-  SiAmazon,
-  SiBox,
-  SiBytedance,
-  SiChase,
-  SiCloudbees,
-} from "react-icons/si";
+import { SiNike } from "react-icons/si";
 import { LogoItem } from "./LogoItem";
+import { SponsorAPI } from "../../../interfaces";
+import { FC } from "react";
 
-export const LogoItemsTop = () => (
+interface LogoItemsTopProps {
+  sponsors: SponsorAPI[];
+}
+
+export const LogoItemsTop: FC<LogoItemsTopProps> = ({ sponsors }) => (
   <>
-    <LogoItem Icon={SiNike} name="Nike" />
-    <LogoItem Icon={Si3M} name="3M" />
-    <LogoItem Icon={SiAbstract} name="Abstract" />
-    <LogoItem Icon={SiAdobe} name="Adobe" />
-    <LogoItem Icon={SiAirtable} name="Airtable" />
-    <LogoItem Icon={SiAmazon} name="Amazon" />
-    <LogoItem Icon={SiBox} name="Box" />
-    <LogoItem Icon={SiBytedance} name="Bytedance" />
-    <LogoItem Icon={SiChase} name="Chase" />
-    <LogoItem Icon={SiCloudbees} name="Cloudebees" />
+    {sponsors.map((sponsor) => (
+      <LogoItem
+        Icon={SiNike}
+        name={sponsor.sponsorName}
+        sponsor={sponsor}
+        key={sponsor.sponsorId}
+      />
+    ))}
   </>
 );

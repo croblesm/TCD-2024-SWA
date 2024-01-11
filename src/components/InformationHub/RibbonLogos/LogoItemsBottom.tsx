@@ -1,28 +1,21 @@
-import {
-  SiBurton,
-  SiBmw,
-  SiHeroku,
-  SiBuildkite,
-  SiCouchbase,
-  SiDailymotion,
-  SiDeliveroo,
-  SiEpicgames,
-  SiGenius,
-  SiGodaddy,
-} from "react-icons/si";
+import { SiBmw } from "react-icons/si";
 import { LogoItem } from "./LogoItem";
+import { SponsorAPI } from "../../../interfaces";
+import { FC } from "react";
 
-export const LogoItemsBottom = () => (
+interface LogoItemsBottomProps {
+  sponsors: SponsorAPI[];
+}
+
+export const LogoItemsBottom: FC<LogoItemsBottomProps> = ({ sponsors }) => (
   <>
-    <LogoItem Icon={SiBmw} name="BMW" />
-    <LogoItem Icon={SiBurton} name="Burton" />
-    <LogoItem Icon={SiBuildkite} name="Buildkite" />
-    <LogoItem Icon={SiCouchbase} name="Couchbase" />
-    <LogoItem Icon={SiDailymotion} name="Dailymotion" />
-    <LogoItem Icon={SiDeliveroo} name="deliveroo" />
-    <LogoItem Icon={SiEpicgames} name="Epic Games" />
-    <LogoItem Icon={SiGenius} name="Genius" />
-    <LogoItem Icon={SiGodaddy} name="GoDaddy" />
-    <LogoItem Icon={SiHeroku} name="Heroku" />
+    {sponsors.map((sponsor) => (
+      <LogoItem
+        Icon={SiBmw}
+        name="BMW"
+        key={sponsor.sponsorId}
+        sponsor={sponsor}
+      />
+    ))}
   </>
 );
