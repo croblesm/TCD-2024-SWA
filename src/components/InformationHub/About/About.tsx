@@ -10,14 +10,15 @@ export const About = () => {
           </div>
           <div className="text-lg mt-4 text-tech-gray-700">
             <p>
-              Tech Community es un grupo de usuarios sin fines de lucro cuyo
-              propósito es apoyar y reunir a los profesionales de tecnología de
-              la información y a los estudiantes.
+              Somos una comunidad liderada por un grupo de guatemaltecos fundada
+              en el año 2018 con la finalidad de compartir conocimiento en el
+              campo de tecnología sin fines de lucro.
             </p>
             <p>
-              Brindamos recursos tecnológicos para que los estudiantes reciban
-              apoyo. Nos enfocamos en temas nativos de DevOps, Data & Analytics
-              y Cloud computing.
+              Nuestra misión es a apoyar las necesidades tecnológicas de
+              Guatemala y LATAM por medio de reuniones meetups en distintas
+              ramas de tecnología como DevOps, Cloud Computing, Software
+              Development y Data & AI.
             </p>
           </div>
         </div>
