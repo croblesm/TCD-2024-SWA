@@ -3,8 +3,8 @@ export const About = () => {
     <div className="min-h-[30vh] mt-20 ">
       <div className="flex items-center flex-col">
         <div className="text-center max-w-6xl ">
-          <div className="text-4xl sm:text-6xl text-tech-blue-800 font-bold">
-            <p className="text-4xl sm:text-6xl text-tech-blue-800 font-bold ">
+          <div className="text-3xl sm:text-5xl text-tech-blue-800 font-bold">
+            <p className="text-3xl sm:text-5xl text-tech-blue-800 font-bold ">
               Sobre nosotros
             </p>
           </div>
@@ -14,6 +14,7 @@ export const About = () => {
               en el año 2018 con la finalidad de compartir conocimiento en el
               campo de tecnología sin fines de lucro.
             </p>
+            <br />
             <p>
               Nuestra misión es a apoyar las necesidades tecnológicas de
               Guatemala y LATAM por medio de reuniones meetups en distintas
