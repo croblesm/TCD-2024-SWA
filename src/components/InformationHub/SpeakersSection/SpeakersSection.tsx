@@ -1,39 +1,84 @@
 import { motion } from "framer-motion";
+import { useSpeakers } from "../../../hooks";
+import { ISpeakerResponse } from "../../../interfaces";
+import { shuffle } from "../../../utils";
 
 export const SpeakersSection = () => {
+  const { sponsorQuery } = useSpeakers();
+  if (sponsorQuery.isLoading) return <p>loading...</p>;
+  if (sponsorQuery.error) return <p>error...</p>;
   return (
-    <div className="bg-slate-950 py-12">
-      <div className="mb-8 px-4">
-        <h3 className="text-slate-50 text-4xl font-semibold text-center">
-          Testimonials
-        </h3>
-        <p className="text-center text-slate-300 text-sm mt-2 max-w-lg mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          consequatur reprehenderit.
-        </p>
-      </div>
-      <div className="p-4 overflow-x-hidden relative">
-        <div className="absolute top-0 bottom-0 left-0 w-24 z-10 bg-gradient-to-r from-slate-900 to-transparent" />
+    <>
+      {sponsorQuery?.data != null && (
+        <div className="bg-slate-950 py-12">
+          <div className="mb-8 px-4">
+            <h3 className="text-slate-50 text-4xl font-semibold text-center">
+              Testimonials
+            </h3>
+            <p className="text-center text-slate-300 text-sm mt-2 max-w-lg mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus consequatur reprehenderit.
+            </p>
+          </div>
+          <div className="p-4 overflow-x-hidden relative">
+            <div className="absolute top-0 bottom-0 left-0 w-24 z-10 bg-gradient-to-r from-slate-900 to-transparent" />
 
-        <div className="flex items-center mb-4">
-          <TestimonialList list={testimonials.top} duration={125} />
-          <TestimonialList list={testimonials.top} duration={125} />
-          <TestimonialList list={testimonials.top} duration={125} />
-        </div>
-        <div className="flex items-center mb-4">
-          <TestimonialList list={testimonials.middle} duration={75} reverse />
-          <TestimonialList list={testimonials.middle} duration={75} reverse />
-          <TestimonialList list={testimonials.middle} duration={75} reverse />
-        </div>
-        <div className="flex items-center">
-          <TestimonialList list={testimonials.bottom} duration={275} />
-          <TestimonialList list={testimonials.bottom} duration={275} />
-          <TestimonialList list={testimonials.bottom} duration={275} />
-        </div>
+            <div className="flex items-center mb-4">
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={125}
+              />
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={125}
+              />
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={125}
+              />
+            </div>
+            <div className="flex items-center mb-4">
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={75}
+                reverse
+              />
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={75}
+                reverse
+              />
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={75}
+                reverse
+              />
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={75}
+                reverse
+              />
+            </div>
+            <div className="flex items-center">
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={275}
+              />
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={275}
+              />
+              <TestimonialList
+                list={shuffle(sponsorQuery.data)}
+                duration={275}
+              />
+            </div>
 
-        <div className="absolute top-0 bottom-0 right-0 w-24 z-10 bg-gradient-to-l from-slate-900 to-transparent" />
-      </div>
-    </div>
+            <div className="absolute top-0 bottom-0 right-0 w-24 z-10 bg-gradient-to-l from-slate-900 to-transparent" />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
@@ -42,7 +87,7 @@ const TestimonialList = ({
   reverse = false,
   duration = 50,
 }: {
-  list: typeof testimonials.top;
+  list: ISpeakerResponse[];
   reverse?: boolean;
   duration?: number;
 }) => {
@@ -56,14 +101,19 @@ const TestimonialList = ({
       {list.map((t) => {
         return (
           <div
-            key={t.id}
+            key={t.speakerId}
             className="shrink-0 w-[500px] grid grid-cols-[7rem,_1fr] rounded-lg overflow-hidden relative"
           >
-            <img src={t.img} className="w-full h-44 object-cover" />
+            <img
+              src={t.photoUrl ?? testimonials.top[1].img}
+              className="w-full h-44 object-cover"
+            />
             <div className="bg-slate-900 text-slate-50 p-4">
-              <span className="block font-semibold text-lg mb-1">{t.name}</span>
+              <span className="block font-semibold text-lg mb-1">{`${t.firstName} ${t.lastName}`}</span>
               <span className="block mb-3 text-sm font-medium">{t.title}</span>
-              <span className="block text-sm text-slate-300">{t.info}</span>
+              <span className="block text-sm text-slate-300 truncate-line-4">
+                {t.bio}
+              </span>
             </div>
             <span className="text-7xl absolute top-2 right-2 text-slate-700">
               "
