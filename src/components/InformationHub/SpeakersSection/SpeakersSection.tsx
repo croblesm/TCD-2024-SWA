@@ -19,7 +19,7 @@ export const SpeakersSection = () => {
               Nuestra conferencia cuenta con la participación de líderes y
               profesionales sobresalientes en el ámbito tecnológico. Estos
               expertos compartirán sus conocimientos y experiencias a través de
-              ponencias que prometen inspirar, educar y motivar a nuestra
+              sesiones que prometen inspirar, educar y motivar a nuestra
               audiencia. Descubre las últimas tendencias, explora soluciones
               innovadoras y conecta con las mentes más influyentes del sector.
             </p>

@@ -1,11 +1,11 @@
 import { IAgendaResponse, ISessionGroup } from "../../interfaces";
 
 const roomPriority: Record<string, number> = {
-  "Lobby Centro TICs": 1,
-  "Patio Centro TICs": 2,
+  "Lobby Centro TICS": 1,
+  "Patio Centro TICS": 2,
   Auditorio: 3,
-  "Salon Atitlan": 4,
-  "Salon Peten": 5,
+  "Aula 201": 4,
+  "Aula 202": 5,
 };
 
 const getRoomPriority = (room: string): number => {

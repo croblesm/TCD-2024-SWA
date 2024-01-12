@@ -3,7 +3,7 @@ export const Hero = () => {
     <div className="flex flex-col justify-evenly items-center w-full gap-6">
       <div className="flex justify-center sm:w-1/2 ">
         <img
-          src="https://res.cloudinary.com/dqklxngqs/image/upload/v1684690446/tech_Community_5db1794517.jpg"
+          src="https://github.com/croblesm/TCD-2024/blob/main/Images/TCD-2024-banner.jpeg?raw=true"
           alt="Tech Community"
           className="rounded-2xl"
           style={{
@@ -16,8 +16,8 @@ export const Hero = () => {
           className="text-2xl lg:text-6xl block text-tech-blue-800 font-bold 
         font-futura"
         >
-          <p>All the things about tech:</p>
-          <p>By the community, for the community</p>
+          <p>Intecap - Centro TICS</p>
+          <p>27 de Enero del 2024 - 09:00 AM a 05:00 PM</p>
         </div>
       </div>
     </div>

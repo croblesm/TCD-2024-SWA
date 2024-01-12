@@ -26,7 +26,7 @@ export enum Level {
 }
 
 export enum SessionType {
-  SesionCorta = "Sesion corta",
+  SesionAlterna = "Sesion alterna",
   SesionRegular = "Sesion regular",
   Workshop = "Workshop",
 }

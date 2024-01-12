@@ -85,7 +85,7 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
                 className={`text-xs font-bold block mt-1 ${
                   session.session.sessionType === SessionType.Workshop
                     ? "bg-blue-100 text-blue-800"
-                    : session.session.sessionType === SessionType.SesionCorta
+                    : session.session.sessionType === SessionType.SesionAlterna
                     ? "bg-pink-100 text-pink-800"
                     : session.session.sessionType === SessionType.SesionRegular
                     ? "bg-purple-100 text-purple-800"
