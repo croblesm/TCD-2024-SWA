@@ -16,8 +16,8 @@ export const Hero = () => {
           className="text-2xl lg:text-6xl block text-tech-blue-800 font-bold 
         font-futura"
         >
-          <p>Intecap - Centro TICS Zona 05, Ciudad de Guatemala</p>
-          <p>27 de Enero del 2024, a partir de 09:00 AM</p>
+          <p>Intecap - Centro TICS</p>
+          <p>27 de Enero del 2024 - 09:00 AM a 05:00 PM</p>
         </div>
       </div>
     </div>
