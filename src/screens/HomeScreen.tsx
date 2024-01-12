@@ -12,9 +12,9 @@ export const HomeScreen = () => {
     <MainLayout>
       <Hero />
       <About />
-      <Topics />
       <RibbonLogos />
       <SpeakersSection />
+      <Topics />
     </MainLayout>
   );
 };
