@@ -10,14 +10,18 @@ export const SpeakersSection = () => {
   return (
     <>
       {sponsorQuery?.data != null && (
-        <div className="bg-slate-950 py-12">
+        <div className="bg-slate-950 py-12 my-20">
           <div className="mb-8 px-4">
             <h3 className="text-slate-50 text-4xl font-semibold text-center">
-              Testimonials
+              Visionarios de la Innovación Tecnológica
             </h3>
             <p className="text-center text-slate-300 text-sm mt-2 max-w-lg mx-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus consequatur reprehenderit.
+              Nuestra conferencia cuenta con la participación de líderes y
+              profesionales sobresalientes en el ámbito tecnológico. Estos
+              expertos compartirán sus conocimientos y experiencias a través de
+              ponencias que prometen inspirar, educar y motivar a nuestra
+              audiencia. Descubre las últimas tendencias, explora soluciones
+              innovadoras y conecta con las mentes más influyentes del sector.
             </p>
           </div>
           <div className="p-4 overflow-x-hidden relative">

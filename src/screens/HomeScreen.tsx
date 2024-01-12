@@ -1,6 +1,7 @@
 import { MainLayout } from "../components/layout";
 import {
   About,
+  Agenda,
   Hero,
   RibbonLogos,
   SpeakersSection,
@@ -12,8 +13,9 @@ export const HomeScreen = () => {
     <MainLayout>
       <Hero />
       <About />
-      <RibbonLogos />
       <SpeakersSection />
+      <Agenda />
+      <RibbonLogos />
       <Topics />
     </MainLayout>
   );
