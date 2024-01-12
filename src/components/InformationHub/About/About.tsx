@@ -11,8 +11,7 @@ export const About = () => {
                 <a
                   href="https://www.meetup.com/techcommunitygt/events/297288870"
                   className="text-3xl sm:text-5xl  font-bold "
-                  target="_blank"
-                >
+                  target="_blank">
                   <p className="text-3xl sm:text-5xl p-4 font-bold">
                     Registrate aqui!
                   </p>
@@ -20,6 +19,7 @@ export const About = () => {
               </Button>
             </p>
           </div>
+          <br />
           <div className="text-lg mt-4 text-tech-gray-700 flex flex-col gap-4 text-center">
             <p>
               Únete a{" "}
