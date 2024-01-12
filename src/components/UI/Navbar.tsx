@@ -8,7 +8,7 @@ export const Navbar = () => {
       <Toolbar>
         <div className="container mx-auto">
           <a href={"/"}>
-            <p className="font-bold text-white text-2xl">Tech Community Day 2014</p>
+            <p className="font-bold text-white text-2xl">Tech Community Day 2024</p>
           </a>
         </div>
       </Toolbar>
