@@ -3,7 +3,7 @@ import { IAgendaResponse, ISessionGroup } from "../../interfaces";
 const roomPriority: Record<string, number> = {
   "Lobby Centro TICS": 1,
   "Patio Centro TICS": 2,
-  "Aula magna": 3,
+  Auditorio: 3,
   "Aula 201": 4,
   "Aula 202": 5,
 };
