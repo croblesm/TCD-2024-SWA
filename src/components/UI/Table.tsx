@@ -44,9 +44,11 @@ interface RowTableProps {
 }
 
 const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
-  const sesiones = new Array(3)
-    .fill(null)
-    .map((_, index) => sessionGroup.sesiones[index]);
+  const sesiones =
+    sessionGroup.sesiones.length === 1
+      ? new Array(3).fill(null).map((_, index) => sessionGroup.sesiones[index])
+      : sessionGroup.sesiones;
+
   return (
     <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
       <th
@@ -61,6 +63,7 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
         <td
           className="px-6 py-4"
           key={`session-${sessionGroup.horarioInicio}-${index}`}
+          rowSpan={session?.rowSpan || 1}
         >
           {session ? (
             <>
@@ -90,7 +93,7 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
                     : session.session.sessionType === SessionType.SesionRegular
                     ? "bg-purple-100 text-purple-800"
                     : ""
-                } px-2 py-1 inline-block rounded-full`}
+                } px-2 py-1 inline-block rounded-full text-center`}
               >
                 {session.session.sessionType}
               </span>
