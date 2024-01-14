@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { ISessionGroup, SessionType } from "../../interfaces";
 import { formatToTimeZone } from "../../utils";
+import { useModalSessionStore } from "../../libs";
 
 interface TableProps {
   sessionsGroup: ISessionGroup[];
@@ -49,6 +50,8 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
       ? new Array(3).fill(null).map((_, index) => sessionGroup.sesiones[index])
       : sessionGroup.sesiones;
 
+  const { handleSelectSession } = useModalSessionStore();
+
   return (
     <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
       <th
@@ -64,6 +67,9 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
           className="px-6 py-4"
           key={`session-${sessionGroup.horarioInicio}-${index}`}
           rowSpan={session?.rowSpan || 1}
+          onClick={() => {
+            handleSelectSession(session.session);
+          }}
         >
           {session ? (
             <>
