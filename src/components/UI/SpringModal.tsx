@@ -27,8 +27,8 @@ export const SpringModal: FC<SpringModalProps> = ({
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-gradient-to-br from-violet-600 to-indigo-600 text-white p-6 
-            rounded-lg w-full lg:w-11/12 max-h-[80vh] shadow-xl cursor-default relative overflow-hidden"
+            className="bg-tech-blue-800 text-white p-6 
+            rounded-lg w-full lg:w-11/12 max-h-[80vh] shadow-xl cursor-default relative overflow-auto"
           >
             {children}
           </motion.div>
