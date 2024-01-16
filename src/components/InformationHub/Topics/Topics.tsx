@@ -5,7 +5,11 @@ const topics = [
     id: 1,
     text: "Facebook",
     Icon: (
-      <a href="https://www.facebook.com/groups/techCommunityGT" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.facebook.com/groups/techCommunityGT"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Facebook sx={{ fontSize: 80 }} color="primary" />
       </a>
     ),
@@ -14,7 +18,11 @@ const topics = [
     id: 2,
     text: "Instagram",
     Icon: (
-      <a href="http://instagram.com/techcommunitygt" target="_blank" rel="noopener noreferrer">
+      <a
+        href="http://instagram.com/techcommunitygt"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Instagram sx={{ fontSize: 80 }} color="primary" />
       </a>
     ),
@@ -23,7 +31,11 @@ const topics = [
     id: 3,
     text: "LinkedIn",
     Icon: (
-      <a href="http://linkedin.com/company/techcommunitygt" target="_blank" rel="noopener noreferrer">
+      <a
+        href="http://linkedin.com/company/techcommunitygt"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <LinkedIn sx={{ fontSize: 80 }} color="primary" />
       </a>
     ),
@@ -32,7 +44,11 @@ const topics = [
     id: 4,
     text: "Twitter",
     Icon: (
-      <a href="http://twitter.com/TechCommunityGT" target="_blank" rel="noopener noreferrer">
+      <a
+        href="http://twitter.com/TechCommunityGT"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Twitter sx={{ fontSize: 80 }} color="primary" />
       </a>
     ),
@@ -41,7 +57,7 @@ const topics = [
 
 export const Topics = () => {
   return (
-    <div className="grid grid-cols-4 sm:grid-cols-4 justify-around mt-4 place-items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-around mt-4 place-items-center">
       {topics.map((topic) => (
         <div
           key={topic.id}

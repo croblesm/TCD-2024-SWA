@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useSpeakers } from "../../../hooks";
 import { ISpeakerResponse } from "../../../interfaces";
 import { shuffle } from "../../../utils";
+import { useModalSpeakerStore } from "../../../libs";
+import { ModalSpeakers } from ".";
 
 export const SpeakersSection = () => {
   const { sponsorQuery } = useSpeakers();
@@ -82,6 +84,7 @@ export const SpeakersSection = () => {
           </div>
         </div>
       )}
+      <ModalSpeakers />
     </>
   );
 };
@@ -95,18 +98,22 @@ const TestimonialList = ({
   reverse?: boolean;
   duration?: number;
 }) => {
+  const { handleSelectSpeaker } = useModalSpeakerStore();
   return (
     <motion.div
       initial={{ translateX: reverse ? "-100%" : "0%" }}
       animate={{ translateX: reverse ? "0%" : "-100%" }}
       transition={{ duration, repeat: Infinity, ease: "linear" }}
-      className="flex gap-4 px-2"
+      className="flex gap-4 px-2 cursor-pointer"
     >
       {list.map((t) => {
         return (
           <div
             key={t.speakerId}
             className="shrink-0 w-[500px] grid grid-cols-[7rem,_1fr] rounded-lg overflow-hidden relative"
+            onClick={() => {
+              handleSelectSpeaker(t);
+            }}
           >
             <img
               src={t.photoUrl ?? testimonials.top[1].img}

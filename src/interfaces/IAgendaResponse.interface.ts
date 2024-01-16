@@ -7,6 +7,7 @@ export interface IAgendaResponse {
   room: string;
   sessionId: number;
   session: Session;
+  rowSpan?: number;
 }
 
 export interface Session {

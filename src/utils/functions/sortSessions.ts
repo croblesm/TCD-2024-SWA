@@ -12,45 +12,51 @@ const getRoomPriority = (room: string): number => {
   // Retorna la prioridad de la sala o un número grande si la sala no está definida
   return roomPriority[room] || 999;
 };
-
 export const sortSessions = (sesiones: IAgendaResponse[]): ISessionGroup[] => {
-  // Paso 1: Ordenar por 'startTime'
-  const sesionesOrdenadas = sesiones.sort(
-    (a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime()
-  );
-
-  // Paso 2: Agrupar por 'startTime'
-  const sesionesAgrupadas = sesionesOrdenadas.reduce<
-    Record<string, IAgendaResponse[]>
-  >((acc, sesion) => {
-    const fechaInicio = sesion.startTime;
-    if (!acc[fechaInicio]) {
-      acc[fechaInicio] = [];
-    }
-    acc[fechaInicio].push(sesion);
-    return acc;
-  }, {});
-
-  // Paso 3: Crear la estructura deseada
-  const resultado = Object.keys(sesionesAgrupadas).map((fechaInicio) => {
-    let sesionesEnGrupo = sesionesAgrupadas[fechaInicio];
-
-    // Paso 3.1: Ordenar sesiones por prioridad de sala
-    sesionesEnGrupo = sesionesEnGrupo.sort((a, b) => {
-      return getRoomPriority(a.room) - getRoomPriority(b.room);
-    });
-
-    // Paso 3.2: Encontrar el 'endTime' más tardío en el grupo
-    const horarioFin = sesionesEnGrupo.reduce((ultimoFin, sesion) => {
-      return sesion.endTime > ultimoFin ? sesion.endTime : ultimoFin;
-    }, sesionesEnGrupo[0].endTime);
-
-    return {
-      horarioInicio: fechaInicio,
-      horarioFin,
-      sesiones: sesionesEnGrupo,
-    };
+  // Ordenar sesiones por 'startTime' y luego por 'endTime'
+  sesiones.sort((a, b) => {
+    const startComparison =
+      new Date(a.startTime).getTime() - new Date(b.startTime).getTime();
+    if (startComparison !== 0) return startComparison;
+    return new Date(a.endTime).getTime() - new Date(b.endTime).getTime();
   });
 
-  return resultado;
+  const sesionesAgrupadas: ISessionGroup[] = [];
+
+  for (const sesion of sesiones) {
+    const startTime = sesion.startTime;
+    const endTime = sesion.endTime;
+
+    // Encuentra un grupo existente o crea uno nuevo
+    let grupo = sesionesAgrupadas.find((g) => g.horarioInicio === startTime);
+    if (!grupo) {
+      grupo = { horarioInicio: startTime, horarioFin: endTime, sesiones: [] };
+      sesionesAgrupadas.push(grupo);
+    }
+
+    grupo.sesiones.push(sesion);
+    // Actualiza 'horarioFin' si la sesión actual termina más tarde
+    if (new Date(endTime) > new Date(grupo.horarioFin)) {
+      grupo.horarioFin = endTime;
+    }
+
+    // Ordenar sesiones por prioridad de sala
+    grupo.sesiones.sort(
+      (a, b) => getRoomPriority(a.room) - getRoomPriority(b.room)
+    );
+  }
+
+  // Asignar el rowSpan adecuado a cada sesión
+  for (const grupo of sesionesAgrupadas) {
+    for (const sesion of grupo.sesiones) {
+      const sesionEndTime = new Date(sesion.endTime);
+      sesion.rowSpan = sesionesAgrupadas.filter(
+        (g) =>
+          new Date(g.horarioInicio) < sesionEndTime &&
+          new Date(g.horarioInicio) >= new Date(sesion.startTime)
+      ).length;
+    }
+  }
+
+  return sesionesAgrupadas;
 };
