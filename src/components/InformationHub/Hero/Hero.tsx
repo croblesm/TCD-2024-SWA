@@ -3,7 +3,7 @@ export const Hero = () => {
     <div className="flex flex-col justify-evenly items-center w-full gap-6">
       <div className="flex justify-center sm:w-1/2 ">
         <img
-          src="https://github.com/croblesm/TCD-2024/blob/main/Images/TCD-2024-banner.jpeg?raw=true"
+          src="https://github.com/croblesm/TCD-2024/blob/main/Images/TCD-2024-banner.png?raw=true"
           alt="Tech Community"
           className="rounded-2xl"
           style={{
