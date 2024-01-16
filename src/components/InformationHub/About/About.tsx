@@ -12,7 +12,7 @@ export const About = () => {
                   href="https://www.meetup.com/techcommunitygt/events/297288870"
                   className="text-3xl sm:text-5xl  font-bold "
                   target="_blank">
-                  <p className="text-3xl sm:text-5xl p-4 font-bold">
+                  <p className="text-3xl sm:text-5xl p-4 font-bold" style={{ textTransform: 'none' }}>
                     Registrate aqui!
                   </p>
                 </a>
