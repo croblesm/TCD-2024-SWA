@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && copyfiles -f challenge/**.html dist/challenge && copyfiles -f challenge/assets/**.css dist/assets && copyfiles -f challenge/assets/**.js dist/assets",
+    "build": "tsc && vite build && copyfiles -f challenge/**.html dist/challenge && copyfiles -f challenge/assets/**.css dist/assets && copyfiles -f challenge/assets/**.js dist/assets && copyfiles -f challenge/assets/**.png dist/assets",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
