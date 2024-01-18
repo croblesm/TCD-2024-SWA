@@ -14,8 +14,10 @@ const nullSession: Session = {
   sessionType: null,
   level: null,
   duration: 0,
-  speakerId: 0,
   agendas: null,
+  firstName: "",
+  lastName: "",
+  photoUrl: "",
 };
 
 export const useModalSessionStore = create<Store>()((set) => ({

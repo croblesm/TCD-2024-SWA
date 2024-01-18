@@ -13,3 +13,19 @@ export const formatToTimeZone = (dateString: string): string => {
   // Formatear la fecha en la zona horaria UTC
   return new Intl.DateTimeFormat("en-US", options).format(date);
 };
+
+export const formatDuration = (duration: number): string => {
+  // Ensure that duration is a non-negative integer
+  if (duration < 0 || !Number.isInteger(duration)) {
+    return "hh:mm";
+  }
+
+  const hours = Math.floor(duration / 60);
+  const minutes = duration % 60;
+
+  // Pad the hours and minutes with leading zeros if needed
+  const paddedHours = hours.toString().padStart(2, "0");
+  const paddedMinutes = minutes.toString().padStart(2, "0");
+
+  return `${paddedHours}:${paddedMinutes}`;
+};
