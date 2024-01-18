@@ -4,54 +4,26 @@ const topics = [
   {
     id: 1,
     text: "Facebook",
-    Icon: (
-      <a
-        href="https://www.facebook.com/groups/techCommunityGT"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Facebook sx={{ fontSize: 80 }} color="primary" />
-      </a>
-    ),
+    href: "https://www.facebook.com/groups/techCommunityGT",
+    Icon: <Facebook sx={{ fontSize: 80 }} color="primary" />,
   },
   {
     id: 2,
     text: "Instagram",
-    Icon: (
-      <a
-        href="http://instagram.com/techcommunitygt"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Instagram sx={{ fontSize: 80 }} color="primary" />
-      </a>
-    ),
+    href: "http://instagram.com/techcommunitygt",
+    Icon: <Instagram sx={{ fontSize: 80 }} color="primary" />,
   },
   {
     id: 3,
     text: "LinkedIn",
-    Icon: (
-      <a
-        href="http://linkedin.com/company/techcommunitygt"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <LinkedIn sx={{ fontSize: 80 }} color="primary" />
-      </a>
-    ),
+    href: "http://linkedin.com/company/techcommunitygt",
+    Icon: <LinkedIn sx={{ fontSize: 80 }} color="primary" />,
   },
   {
     id: 4,
     text: "Twitter",
-    Icon: (
-      <a
-        href="http://twitter.com/TechCommunityGT"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Twitter sx={{ fontSize: 80 }} color="primary" />
-      </a>
-    ),
+    href: "http://twitter.com/TechCommunityGT",
+    Icon: <Twitter sx={{ fontSize: 80 }} color="primary" />,
   },
 ];
 
@@ -59,9 +31,12 @@ export const Topics = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-around mt-4 place-items-center">
       {topics.map((topic) => (
-        <div
+        <a
           key={topic.id}
           className="m-2 px-4 py-2 w-80 flex flex-col justify-between gap-4"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={topic.href}
         >
           <div className="w-full flex justify-center">{topic.Icon}</div>
           <div className="w-full flex justify-center items-center">
@@ -69,7 +44,7 @@ export const Topics = () => {
               {topic.text}
             </p>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   );
