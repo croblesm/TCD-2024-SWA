@@ -7,6 +7,7 @@ export interface IAgendaResponse {
   room: string;
   sessionId: number;
   session: Session;
+  rowSpan?: number;
 }
 
 export interface Session {
@@ -26,7 +27,7 @@ export enum Level {
 }
 
 export enum SessionType {
-  SesionCorta = "Sesion corta",
+  SesionAlterna = "Sesion alterna",
   SesionRegular = "Sesion regular",
   Workshop = "Workshop",
 }

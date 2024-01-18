@@ -4,3 +4,5 @@ export * from "./LoadingEvent";
 export * from "./LoadingManyEvents";
 export * from "./Footer";
 export * from "./Table";
+export * from "./SpringModal";
+export * from "./SpeakerCard";
