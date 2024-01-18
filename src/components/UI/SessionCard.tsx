@@ -5,9 +5,10 @@ import { formatDuration } from "../../utils";
 
 interface SessionCardProps {
   session: Session;
+  room: string;
 }
 
-export const SessionCard: FC<SessionCardProps> = ({ session }) => {
+export const SessionCard: FC<SessionCardProps> = ({ session, room }) => {
   const {
     description,
     duration,
@@ -31,6 +32,7 @@ export const SessionCard: FC<SessionCardProps> = ({ session }) => {
         <div>
           <div>
             <p className="text-3xl font-bold">{title}</p>
+            <span className="text-lg text-tech-gray-400 block">{room}</span>
             <p className="text-lg mt-4">{`${firstName} ${lastName}`}</p>
             <p className="mt-2">{description}</p>
             <div className="flex flex-wrap gap-6 mt-6 items-center">

@@ -69,7 +69,7 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
           key={`session-${sessionGroup.horarioInicio}-${index}`}
           rowSpan={session?.rowSpan || 1}
           onClick={() => {
-            handleSelectSession(session.session);
+            handleSelectSession(session.session, session.room);
           }}
         >
           {session ? (

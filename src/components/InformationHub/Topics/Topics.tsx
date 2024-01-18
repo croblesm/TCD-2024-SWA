@@ -1,4 +1,4 @@
-import { Facebook, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
+import { Facebook, Instagram, LinkedIn, X } from "@mui/icons-material";
 
 const topics = [
   {
@@ -21,9 +21,9 @@ const topics = [
   },
   {
     id: 4,
-    text: "Twitter",
+    text: "X",
     href: "http://twitter.com/TechCommunityGT",
-    Icon: <Twitter sx={{ fontSize: 80 }} color="primary" />,
+    Icon: <X sx={{ fontSize: 80 }} color="primary" />,
   },
 ];
 
