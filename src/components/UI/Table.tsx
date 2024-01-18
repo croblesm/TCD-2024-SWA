@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { ISessionGroup, SessionType } from "../../interfaces";
+import { ISessionGroup } from "../../interfaces";
 import { formatToTimeZone } from "../../utils";
 import { useModalSessionStore } from "../../libs";
+import { LevelSnack, SessionTypeSnack } from ".";
 
 interface TableProps {
   sessionsGroup: ISessionGroup[];
@@ -68,7 +69,7 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
           key={`session-${sessionGroup.horarioInicio}-${index}`}
           rowSpan={session?.rowSpan || 1}
           onClick={() => {
-            handleSelectSession(session.session);
+            handleSelectSession(session.session, session.room);
           }}
         >
           {session ? (
@@ -79,30 +80,8 @@ const RowTable: FC<RowTableProps> = ({ sessionGroup }) => {
               <span className="text-xs text-gray-500 block">
                 {session.room}
               </span>
-              <span
-                className={`text-xs ${
-                  session.session.level === "Avanzado"
-                    ? "text-red-500"
-                    : session.session.level === "Intermedio"
-                    ? "text-yellow-500"
-                    : "text-green-500"
-                } font-bold block mt-1`}
-              >
-                {session.session.level}
-              </span>
-              <span
-                className={`text-xs font-bold block mt-1 ${
-                  session.session.sessionType === SessionType.Workshop
-                    ? "bg-blue-100 text-blue-800"
-                    : session.session.sessionType === SessionType.SesionAlterna
-                    ? "bg-pink-100 text-pink-800"
-                    : session.session.sessionType === SessionType.SesionRegular
-                    ? "bg-purple-100 text-purple-800"
-                    : ""
-                } px-2 py-1 inline-block rounded-full text-center`}
-              >
-                {session.session.sessionType}
-              </span>
+              <LevelSnack level={session.session.level} />
+              <SessionTypeSnack sessionType={session.session.sessionType} />
             </>
           ) : (
             ""

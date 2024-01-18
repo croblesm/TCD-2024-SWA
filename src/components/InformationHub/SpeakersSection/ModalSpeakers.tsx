@@ -6,8 +6,6 @@ export const ModalSpeakers = () => {
   return (
     <SpringModal isOpen={isOpen} onClose={onClose}>
       <SpeakerCard speaker={selectedSpeaker} />
-      <hr />
-      <p>{JSON.stringify(selectedSpeaker, null, 2)}</p>
     </SpringModal>
   );
 };

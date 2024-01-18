@@ -1,7 +1,7 @@
 import "./assets/fonts.css";
 import { ContextContainer } from "./components/context";
 import { Route } from "wouter";
-import { HomeScreen } from "./screens";
+import { CodeConductScreen, HomeScreen } from "./screens";
 
 function App() {
   return (
@@ -9,6 +9,9 @@ function App() {
       <ContextContainer>
         <Route path="/">
           <HomeScreen />
+        </Route>
+        <Route path="/code-of-conduct">
+          <CodeConductScreen />
         </Route>
       </ContextContainer>
     </>

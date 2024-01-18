@@ -16,7 +16,9 @@ export interface Session {
   sessionType: SessionType | null;
   level: Level | null;
   duration: number;
-  speakerId: number;
+  firstName: string;
+  lastName: string;
+  photoUrl: string;
   agendas: null;
 }
 
