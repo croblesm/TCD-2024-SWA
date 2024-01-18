@@ -24,7 +24,7 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href={"/challenge"}>
+            <Link href={"/challenge/index.html"}>
               <a className="font-bold text-white text-lg no-underline">
                 Cloud Skills Challenge
               </a>
