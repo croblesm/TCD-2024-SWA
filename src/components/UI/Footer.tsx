@@ -1,12 +1,27 @@
+import { Link } from "wouter";
+import XIcon from "@mui/icons-material/X";
+
 export const Footer = () => {
   return (
     <footer className="bg-tech-blue-800 text-white">
       <div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400">
-        <ul className="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
+        <ul
+          className="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 
+        sm:justify-around sm:space-x-8 lg:flex-1 lg:justify-start"
+        >
           <li>
-            <a href={"/"}>
-              <p className="font-bold text-white text-2xl">Tech Community</p>
-            </a>
+            <Link href={"/"}>
+              <a className="font-bold text-white text-lg no-underline">
+                Tech Community Day 2024
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href={"/code-of-conduct"}>
+              <a className="font-bold text-white text-lg no-underline">
+                Código de Conducta
+              </a>
+            </Link>
           </li>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
@@ -14,7 +29,9 @@ export const Footer = () => {
             <a
               rel="noopener noreferrer"
               href="https://www.meetup.com/techcommunitygt"
-              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-tech-purple-800"
+              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 
+              sm:h-10 bg-tech-purple-600"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +45,9 @@ export const Footer = () => {
             <a
               rel="noopener noreferrer"
               href="https://www.linkedin.com/company/techcommunitygt"
-              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-tech-purple-800"
+              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 
+              sm:h-10 bg-tech-purple-600"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +66,9 @@ export const Footer = () => {
             <a
               rel="noopener noreferrer"
               href="https://www.facebook.com/groups/techcommunitygt"
-              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-tech-purple-800"
+              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 
+              sm:h-10 bg-tech-purple-600"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,21 +82,22 @@ export const Footer = () => {
             <a
               rel="noopener noreferrer"
               href="https://twitter.com/TechCommunityGT"
-              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-tech-purple-800"
+              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 
+              bg-tech-purple-600"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 32 32"
-                className="w-4 h-4"
-              >
-                <path d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z"></path>
-              </svg>
+              <XIcon
+                sx={{
+                  height: "16px",
+                  width: "16px",
+                }}
+              />
             </a>
             <a
               rel="noopener noreferrer"
               href="https://www.instagram.com/techcommunitygt"
-              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-tech-purple-800"
+              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 
+              sm:h-10 bg-tech-purple-600"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
