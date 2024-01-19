@@ -24,11 +24,9 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href={"https://tcd2024.tech-community.org/challenge"}>
-              <a className="font-bold text-white text-lg no-underline">
-                Cloud Skills Challenge
-              </a>
-            </Link>
+            <a href="/challenge" className="font-bold text-white text-lg no-underline">
+              Cloud Skills Challenge
+            </a>
           </li>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
