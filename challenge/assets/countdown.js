@@ -4,10 +4,9 @@
           hour = minute * 60,
           day = hour * 24;
 
-    birthday = "02/20/2024";
-    //end
+    csc = new Date(Date.UTC(2024, 1, 20, 20)); 
     
-    const countDown = new Date(birthday).getTime(),
+    const countDown = new Date(csc).getTime(),
         x = setInterval(function() {    
   
           const now = new Date().getTime(),
@@ -20,7 +19,7 @@
   
           //do something later when date is reached
           if (distance < 0) {
-            document.getElementById("headline").innerText = "It's my birthday!";
+            document.getElementById("headline").innerText = "Tech Community Day 2024 - Cloud Skills Challenge finalizo!";
             document.getElementById("countdown").style.display = "none";
             document.getElementById("content").style.display = "block";
             clearInterval(x);
