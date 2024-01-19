@@ -24,7 +24,7 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href={"/challenge/index.html"}>
+            <Link href={"https://tcd2024.tech-community.org/challenge"}>
               <a className="font-bold text-white text-lg no-underline">
                 Cloud Skills Challenge
               </a>

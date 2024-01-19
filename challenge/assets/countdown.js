@@ -4,7 +4,7 @@
           hour = minute * 60,
           day = hour * 24;
 
-    birthday = "02/08/2024";
+    birthday = "02/20/2024";
     //end
     
     const countDown = new Date(birthday).getTime(),
