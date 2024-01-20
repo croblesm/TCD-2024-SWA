@@ -52,6 +52,21 @@ export const About = () => {
               </a>{" "}
               para celebrar juntos la innovación y el conocimiento! 🚀
             </p>
+            <p>
+              ¡Completa el Cloud Skills Challenge del TCD 2024 y recibe muchos regalos! {" "}
+            </p>
+            <p>
+              <Button type="button" variant="contained">
+                <a
+                  href="https://tcd2024.tech-community.org/challenge/"
+                  className="text-3xl sm:text-3xl  font-bold "
+                  target="_blank">
+                  <p className="text-3xl sm:text-3xl p-4 font-bold" style={{ textTransform: 'none' }}>
+                    Registro del Cloud Skills Challenge
+                  </p>
+                </a>
+              </Button>
+            </p>
           </div>
         </div>
       </div>
